@@ -1,0 +1,235 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  border-bottom: 1px solid var(--border);
+}
+
+.topbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 24px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.4); }
+}
+
+.topNav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.topNav a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.topNav a:hover, .activeTopNav {
+  color: var(--white) !important;
+}
+
+.btnNav {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: var(--accent) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.btnNav:hover {
+  background: rgba(16, 185, 129, 0.25);
+  transform: translateY(-1px);
+}
+
+.layout {
+  display: flex;
+  flex: 1;
+  padding-top: 64px;
+  height: 100%;
+}
+
+.sidebar {
+  width: var(--nav-w);
+  border-right: 1px solid rgba(16, 185, 129, 0.3);
+  background: linear-gradient(180deg, #0a6b42 0%, #0d8050 40%, #0a6b42 100%);
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  left: 0;
+  top: 64px;
+  bottom: 0;
+  z-index: 150;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-100%);
+}
+
+.sidebarVisible {
+  transform: translateX(0);
+}
+
+.sidebarOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(4px);
+  z-index: 140;
+}
+
+.navSection {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  padding: 0 0.75rem;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+}
+
+.navItem:hover {
+  background: #000000;
+  color: #ffffff;
+  border-color: rgba(0, 0, 0, 0.3);
+  transform: translateX(4px);
+}
+
+.navItem.active {
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  font-weight: 600;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.navIcon {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+
+.navText {
+  flex: 1;
+}
+
+.navBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--sky);
+  color: var(--white);
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+}
+
+.badgeLive {
+  background: var(--accent);
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  font-size: 0.75rem;
+  color: var(--muted2);
+  padding: 0 0.75rem;
+  line-height: 1.6;
+}
+
+.main {
+  flex: 1;
+  padding: 2.5rem 5%;
+  overflow-y: auto;
+  transition: margin-left 0.3s;
+}
+
+/* Removed media query to enforce global hamburger navigation on all screen sizes */
