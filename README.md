@@ -1,3 +1,33 @@
+# Personalized AI Drug Designer
+
+**Generative AI System for Rapid Patient-Specific Drug Discovery**
+*WitchHunt 2026 — Women in Tech Challenge AI Hackathon (HopeWorks Foundation) · Team AI CADABRA · Top 40 Finalist Team*
+
+## Overview
+A web platform for AI-assisted drug discovery. A user enters a disease target, and the system presents ranked drug-candidate molecules with predicted binding affinity, toxicity risk and drug-likeness, along with a natural-language explanation for each candidate.
+
+## Team
+Built by a team of four B.Tech students from IIIT Delhi :
+
+| Member | Role |
+|---|---|
+| Lakshay | Team Lead & AI/ML Engineer: generative models, diffusion architecture, molecular graph design |
+| Vinyas | AI/ML & Backend Engineer: GNN property prediction, model integration, API infrastructure |
+| Anjali | Full-Stack Developer: React dashboard, visualization layer, deployment |
+| Shambhavi | Data Science & Research: dataset curation (ChEMBL, PubChem), feature engineering, evaluation metrics |
+
+Original repository: [AI_Drug_Designer_TT](https://github.com/legendmortal912-ops/AI_Drug_Designer_TT). This is my fork.
+
+## My Contributions
+- Built the React/Next.js dashboard for entering disease targets and viewing results
+- Built the visualization layer for displaying ranked candidate molecules
+
+
+## Tech Stack
+Next.js, React, TypeScript
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
